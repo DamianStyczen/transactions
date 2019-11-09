@@ -12,13 +12,15 @@ function App() {
   const transactions = [
     {
       id: '1',
+      label: 'transaction 1',
       value: 100,
-      category: 'gift'
+      currency: 'EUR'
     },
     {
       id: '2',
+      label: 'transaction 2',
       value: -50,
-      category: 'groceries'
+      currency: 'EUR'
     }
   ];
 

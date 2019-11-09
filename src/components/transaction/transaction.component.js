@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Transaction = ({ id, value, category }) => {
+const Transaction = ({ id, value, label, currency }) => {
   const sign = value < 0 ? '-' : '+';
 
     return (
     <div>
-        {sign} {Math.abs(value)} {category}
+        <h3>{ label }</h3>
+        <p>{ sign } { Math.abs(value) } { currency }</p>
     </div>
   );
 }

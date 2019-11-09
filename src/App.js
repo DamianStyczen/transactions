@@ -3,6 +3,7 @@ import TransactionList from './components/transaction-list';
 import Section from './components/section';
 import Balance from './components/balance';
 import ExchangeRate from './components/exchange-rate';
+import AddTransactionForm from './components/add-transaction-form';
 
 function App() {
   const exchangeRate = 4.16;
@@ -26,6 +27,9 @@ function App() {
       </Section>
       <Section title='Your balance'>
         <Balance transactions={transactions} />
+      </Section>
+      <Section title='Add transaction'>
+        <AddTransactionForm exchangeRate={exchangeRate} />
       </Section>
       <Section title='Your transactions'>
         <TransactionList transactions={transactions} />

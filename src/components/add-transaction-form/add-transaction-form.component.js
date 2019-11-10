@@ -1,19 +1,28 @@
 import React, {useState} from 'react';
 
-const AddTransactionForm = ({ exchangeRate }) => {
+const AddTransactionForm = ({ exchangeRate, addTransaction }) => {
 const [selectedCurrency, setCurrency] = useState('EUR');
-const [value, setValue] = useState(0);
+const [transactionLabel, setLabel] = useState('');
+const [value, setValue] = useState(null);
 const convertedValue = selectedCurrency === 'EUR'
     ? `${value * exchangeRate} PLN`
     : `${value / exchangeRate} EUR`;
 
 const handleSubmit = event => {
     event.preventDefault();
-    console.log('Submited!');
+    addTransaction({
+        label: transactionLabel,
+        value: value,
+        currency: selectedCurrency
+    });
 };
 
 return (
     <form onSubmit={handleSubmit}>
+    <label>
+        Label
+        <input type='text' value={transactionLabel} onChange={e => setLabel(e.target.value)}/>
+    </label>
     <p>Currency</p>
     <label>
         <input
@@ -21,6 +30,7 @@ return (
             name='currency'
             checked={selectedCurrency === 'EUR'}
             onChange={() => setCurrency('EUR')}
+            placeholder='0'
         />
         EUR
     </label>

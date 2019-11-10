@@ -4,7 +4,8 @@ import rootReducer from '../reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState = {
-    exchangeRate: 4.12
+    exchangeRate: 4.12,
+    transactions: {}
 };
 const middleware = [thunk];
 

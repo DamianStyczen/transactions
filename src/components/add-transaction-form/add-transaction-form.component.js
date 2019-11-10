@@ -5,14 +5,14 @@ const [selectedCurrency, setCurrency] = useState('EUR');
 const [transactionLabel, setLabel] = useState('');
 const [value, setValue] = useState('');
 const convertedValue = selectedCurrency === 'EUR'
-    ? `${value * exchangeRate} PLN`
-    : `${value / exchangeRate} EUR`;
+    ? `${Number(value) * exchangeRate} PLN`
+    : `${Number(value) / exchangeRate} EUR`;
 
 const handleSubmit = event => {
     event.preventDefault();
     addTransaction({
         label: transactionLabel,
-        value: value,
+        value: Number(value),
         currency: selectedCurrency
     });
 };

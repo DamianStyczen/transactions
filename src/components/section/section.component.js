@@ -1,11 +1,11 @@
 import React from 'react';
-import { Wrapper } from './section.style';
+import { Wrapper, Title, Content } from './section.style';
 
 const Section = ({ title, collapsable, children }) => {
 return (
     <Wrapper collapsable={collapsable}>
-        <h2>{ title }</h2>
-        { children }
+        <Title>{ title }</Title>
+        <Content>{ children }</Content>
     </Wrapper>
   );
 }

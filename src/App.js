@@ -8,36 +8,35 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 function App() {
-  const exchangeRate = 4.16;
-  const transactions = [
-    {
-      id: '1',
-      label: 'transaction 1',
-      value: 100,
-      currency: 'EUR'
-    },
-    {
-      id: '2',
-      label: 'transaction 2',
-      value: -50,
-      currency: 'EUR'
-    }
-  ];
+  // const transactions = [
+  //   {
+  //     id: '1',
+  //     label: 'transaction 1',
+  //     value: 100,
+  //     currency: 'EUR'
+  //   },
+  //   {
+  //     id: '2',
+  //     label: 'transaction 2',
+  //     value: -50,
+  //     currency: 'EUR'
+  //   }
+  // ];
 
   return (
     <Provider store={store}>
       <main>
         <Section title='Current exchange rate'>
-          <ExchangeRate exchangeRate={exchangeRate} />
+          <ExchangeRate />
         </Section>
         <Section title='Your balance'>
-          <Balance transactions={transactions} />
+          <Balance />
         </Section>
         <Section title='Add transaction'>
-          <AddTransactionForm exchangeRate={exchangeRate} />
+          <AddTransactionForm />
         </Section>
         <Section title='Your transactions'>
-          <TransactionList transactions={transactions} />
+          <TransactionList />
         </Section>
       </main>
     </Provider>

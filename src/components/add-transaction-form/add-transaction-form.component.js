@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 const AddTransactionForm = ({ exchangeRate, addTransaction }) => {
 const [selectedCurrency, setCurrency] = useState('EUR');
 const [transactionLabel, setLabel] = useState('');
-const [value, setValue] = useState(null);
+const [value, setValue] = useState('');
 const convertedValue = selectedCurrency === 'EUR'
     ? `${value * exchangeRate} PLN`
     : `${value / exchangeRate} EUR`;

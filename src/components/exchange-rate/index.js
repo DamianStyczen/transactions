@@ -1,3 +1,3 @@
-import ExchangeRate from './exchange-rate.component';
+import ExchangeRate from './exchange-rate.container';
 
 export default ExchangeRate;

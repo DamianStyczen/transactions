@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Balance = ({ transactions }) => {
-const output = transactions.reduce((acc, item) => (acc + item.value), 0);
+const output = transactions && transactions.reduce((acc, item) => (acc + item.value), 0);
 return (
-    <span>{ output } EUR</span>
+    <span>{ output || 0 } EUR</span>
   );
 }
 

@@ -1,3 +1,3 @@
-import TransactionList from './transaction-list.component';
+import TransactionList from './transaction-list.container';
 
 export default TransactionList;

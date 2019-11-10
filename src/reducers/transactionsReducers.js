@@ -7,8 +7,6 @@ const initialState = {
 }
 
 export default function (state = initialState, action) {
-    console.log(action);
-    console.log('state check', state.list);
     switch (action.type) {
         case TRANSACTIONS_ADD:
             const { transaction } = action;

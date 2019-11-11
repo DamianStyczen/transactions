@@ -15,7 +15,7 @@ const SetCustomRateForm = ({ setCustomRate, closeModal }) => {
             <label>
                 Custom rate
             <br />
-                1 EUR =
+                <span>1 EUR = </span>
                 <Input
                     type='number'
                     value={value}
@@ -23,8 +23,8 @@ const SetCustomRateForm = ({ setCustomRate, closeModal }) => {
                     step={0.01}
                     min={0}
                 />
-                PLN
-        </label>
+                <span> PLN</span>
+            </label>
             <Button type='submit'>Set a custom rate</Button>
         </Form>
     );

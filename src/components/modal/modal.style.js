@@ -13,5 +13,6 @@ export const ClickOutside = styled.div`
 `;
 
 export const Wrapper = styled.div`
-    max-width: 800px;
+    max-width: 500px;
+    width: 100%;
 `;

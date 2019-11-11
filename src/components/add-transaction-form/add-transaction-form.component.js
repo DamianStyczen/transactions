@@ -1,32 +1,30 @@
 import React, { useState } from 'react';
+import { Form, Input, Button, Label, NumberWrapper } from './add-transaction-form.style';
+import NumberViewer from '../number-viewer';
 
-const AddTransactionForm = ({ exchangeRate, addTransaction }) => {
+const AddTransactionForm = ({ addTransaction }) => {
     const [selectedCurrency, setCurrency] = useState('EUR');
     const [transactionLabel, setLabel] = useState('');
     const [value, setValue] = useState('');
-    const convertedValue = selectedCurrency === 'EUR'
-        ? `${Number(value) * exchangeRate} PLN`
-        : `${Number(value) / exchangeRate} EUR`;
-
     const handleSubmit = event => {
         event.preventDefault();
         addTransaction({
-            label: transactionLabel,
+            Label: transactionLabel,
             value: {
-                value: Number(value),
+                value: Number(value) * 100,
                 currency: selectedCurrency
             }
         });
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Label
+        <Form onSubmit={handleSubmit}>
+            <Label>
+                Label <br />
                 <input type='text' value={transactionLabel} onChange={e => setLabel(e.target.value)} step={0.01} />
-            </label>
-            <p>Currency</p>
-            <label>
+            </Label>
+            <Label>
+                Currency <br />
                 <input
                     type='radio'
                     name='currency'
@@ -35,8 +33,7 @@ const AddTransactionForm = ({ exchangeRate, addTransaction }) => {
                     placeholder='0'
                 />
                 EUR
-    </label>
-            <label>
+                <br />
                 <input
                     type='radio'
                     name='currency'
@@ -45,17 +42,17 @@ const AddTransactionForm = ({ exchangeRate, addTransaction }) => {
                     onChange={() => setCurrency('PLN')}
                 />
                 PLN
-    </label>
+    </Label>
 
-            <label>
-                Value of transaction
-        <input type='number' value={value} onChange={(e) => setValue(e.target.value)} /> {selectedCurrency}
-            </label>
-            <span>{convertedValue}</span>
-            <button type='submit' >Add transaction</button>
-
-
-        </form>
+            <Label>
+                Value of transaction<br />
+                <Input type='number' value={value} onChange={(e) => setValue(e.target.value)} /> {selectedCurrency}
+            </Label>
+            <NumberWrapper>
+                <NumberViewer number={{ value, currency: selectedCurrency }} convert />
+            </NumberWrapper>
+            <Button type='submit' >Add transaction</Button>
+        </Form>
     );
 }
 

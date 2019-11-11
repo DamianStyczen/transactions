@@ -5,7 +5,7 @@ import { Wrapper } from './exchange-rate.style';
 
 const ExchangeRate = ({ isCustom, showModal, resetRateToDefault }) => {
   const initialNumber = {
-    value: 1,
+    value: 100,
     currency: 'EUR'
   }
 

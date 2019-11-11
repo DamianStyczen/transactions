@@ -1,8 +1,8 @@
 import { EXCHANGE_RATE_RESET, EXCHANGE_RATE_SET_CUSTOM } from '../actions/actionTypes';
 
 const initialState = {
-    value: 4.27,
-    default: 4.27,
+    value: 427,
+    default: 427,
     isCustom: false
 };
 

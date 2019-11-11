@@ -5,8 +5,8 @@ export const Wrapper = styled.section`
     border-radius: 20px;
     background: white;
     margin-bottom: 20px;
-
-
+    width: ${({ small }) => small ? 'calc(50% - 10px)' : '100%'};
+    min-height: 150px;
 `;
 
 export const Title = styled.h2`

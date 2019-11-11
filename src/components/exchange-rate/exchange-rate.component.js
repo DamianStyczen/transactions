@@ -1,8 +1,12 @@
 import React from 'react';
+import Button from '../button';
 
 const ExchangeRate = ({ exchangeRate }) => {
-return (
-    <span> 1 EUR = {exchangeRate} PLN</span>
+  return (
+    <div>
+      <span> 1 EUR = {exchangeRate} PLN</span>
+      <Button>Set custom rate</Button>
+    </div>
   );
 }
 

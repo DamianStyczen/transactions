@@ -17,6 +17,9 @@ body {
 }
 `;
 export const Wrapper = styled.main`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 20px;
     min-height: 100vh;
     max-width: 800px;

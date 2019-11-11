@@ -14,10 +14,10 @@ function App() {
     <Provider store={store}>
       <GlobalStylesProvider />
       <Wrapper>
-        <Section title='Current exchange rate'>
+        <Section title='Current exchange rate' small>
           <ExchangeRate />
         </Section>
-        <Section title='Your balance'>
+        <Section title='Your balance' small>
           <Balance />
         </Section>
         <Section title='Add transaction'>

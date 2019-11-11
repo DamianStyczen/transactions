@@ -12,10 +12,13 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: black;
+
 }
 `;
 export const Wrapper = styled.main`
     padding: 20px;
-    background: whitesmoke;
     min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
 `;

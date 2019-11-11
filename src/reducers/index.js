@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import transactionsReducers from './transactionsReducers';
+import modalReducers from './modalReducers';
 
 export default combineReducers({
-    transactions: transactionsReducers
+    transactions: transactionsReducers,
+    modal: modalReducers
 });

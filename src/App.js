@@ -7,25 +7,27 @@ import AddTransactionForm from './components/add-transaction-form';
 import { Provider } from 'react-redux';
 import store from './store';
 import { GlobalStylesProvider, Wrapper } from './App.style';
+import Modal from './components/modal';
 
 function App() {
   return (
     <Provider store={store}>
-      <GlobalStylesProvider/>
-        <Wrapper>
-          <Section title='Current exchange rate'>
-            <ExchangeRate />
-          </Section>
-          <Section title='Your balance'>
-            <Balance />
-          </Section>
-          <Section title='Add transaction'>
-            <AddTransactionForm />
-          </Section>
-          <Section title='Your transactions'>
-            <TransactionList />
-          </Section>
-        </Wrapper>
+      <GlobalStylesProvider />
+      <Wrapper>
+        <Section title='Current exchange rate'>
+          <ExchangeRate />
+        </Section>
+        <Section title='Your balance'>
+          <Balance />
+        </Section>
+        <Section title='Add transaction'>
+          <AddTransactionForm />
+        </Section>
+        <Section title='Your transactions'>
+          <TransactionList />
+        </Section>
+        <Modal />
+      </Wrapper>
     </Provider>
   );
 }

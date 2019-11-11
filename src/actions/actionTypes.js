@@ -1,1 +1,7 @@
+// TRANSACTIONS
 export const TRANSACTIONS_ADD = 'TRANSACTIONS_ADD';
+
+// MODALS
+export const MODAL_SHOW = 'MODAL_SHOW';
+export const MODAL_CLOSE = 'MODAL_CLOSE';
+

@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { ClickOutside, Wrapper } from './modal.style';
 import Section from '../section';
-import AddTransactionForm from '../add-transaction-form';
 import { config } from './modal.const';
 
 const Modal = ({ isShown, modalName, closeModal }) => {

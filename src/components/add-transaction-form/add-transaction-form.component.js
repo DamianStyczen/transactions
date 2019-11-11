@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import { Form, Input, Button, Label, NumberWrapper } from './add-transaction-form.style';
 import NumberViewer from '../number-viewer';
 
-const AddTransactionForm = ({ addTransaction }) => {
+const AddTransactionForm = ({ addTransaction, closeModal }) => {
     const [selectedCurrency, setCurrency] = useState('EUR');
     const [transactionLabel, setLabel] = useState('');
     const [value, setValue] = useState('');
     const handleSubmit = event => {
         event.preventDefault();
         addTransaction({
-            Label: transactionLabel,
+            label: transactionLabel,
             value: {
                 value: Number(value) * 100,
                 currency: selectedCurrency
             }
         });
+        closeModal();
     };
 
     return (

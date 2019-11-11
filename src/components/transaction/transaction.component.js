@@ -3,11 +3,12 @@ import NumberViewer from '../number-viewer';
 import { Wrapper, Button, Header } from './transaction.style';
 
 const Transaction = ({ value, label, deleteTransaction }) => {
+  console.log({ value });
   return (
     <Wrapper>
       <Header>{label}</Header>
       <Button onClick={deleteTransaction} danger>Delete</Button>
-      <NumberViewer show={true} number={value} convert />
+      <NumberViewer number={value} convert />
     </Wrapper>
   );
 }

@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { GlobalStylesProvider, Wrapper } from './App.style';
 import Modal from './components/modal';
+import BiggestTransaction from './components/biggest-transaction';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </Section>
         <Section title='Your transactions'>
           <TransactionList />
+        </Section>
+        <Section title='Your biggest transaction'>
+          <BiggestTransaction />
         </Section>
         <Modal />
       </Wrapper>

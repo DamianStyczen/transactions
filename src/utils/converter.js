@@ -4,7 +4,7 @@ const convert = (number, exchangeRate) => {
     const newCurrency = currency === 'EUR' ? 'PLN' : 'EUR';
     const newValue = currency === 'EUR'
         ? value * exchangeRate / 100
-        : value / exchangeRate / 100;
+        : value / exchangeRate * 100;
 
     return {
         value: newValue,

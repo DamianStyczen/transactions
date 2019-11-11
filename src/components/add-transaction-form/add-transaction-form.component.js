@@ -49,7 +49,7 @@ const AddTransactionForm = ({ addTransaction }) => {
                 <Input type='number' value={value} onChange={(e) => setValue(e.target.value)} /> {selectedCurrency}
             </Label>
             <NumberWrapper>
-                <NumberViewer number={{ value, currency: selectedCurrency }} convert />
+                <NumberViewer number={{ value: value * 100, currency: selectedCurrency }} convert />
             </NumberWrapper>
             <Button type='submit' >Add transaction</Button>
         </Form>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../button';
 import NumberViewer from '../number-viewer';
+import { Wrapper } from './exchange-rate.style';
 
 const ExchangeRate = ({ exchangeRate }) => {
   const initialNumber = {
@@ -8,9 +9,10 @@ const ExchangeRate = ({ exchangeRate }) => {
     currency: 'EUR'
   }
   return (
-    <div>
+    <Wrapper>
       <NumberViewer number={initialNumber} convert />
-    </div>
+      <Button>Set custom rate</Button>
+    </Wrapper>
   );
 }
 

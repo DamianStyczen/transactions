@@ -6,7 +6,7 @@ export const Wrapper = styled.section`
     background: white;
     margin-bottom: 20px;
     width: ${({ small }) => small ? 'calc(50% - 10px)' : '100%'};
-    min-height: 150px;
+    min-height: 250px;
 `;
 
 export const Title = styled.h2`
@@ -15,7 +15,7 @@ export const Title = styled.h2`
 `;
 
 export const Content = styled.div`
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 `;

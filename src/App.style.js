@@ -21,7 +21,6 @@ export const Wrapper = styled.main`
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-    min-height: 100vh;
     max-width: 800px;
     margin: 0 auto;
 `;

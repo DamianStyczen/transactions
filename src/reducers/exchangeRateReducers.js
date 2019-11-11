@@ -1,6 +1,9 @@
 import { } from '../actions/actionTypes';
 
-const initialState = 4.12
+const initialState = {
+    value: 4.27,
+    isCustom: false
+};
 
 export default function (state = initialState, action) {
     switch (action.type) {

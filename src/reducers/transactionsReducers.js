@@ -8,8 +8,10 @@ const initialState = {
         {
             id: 0,
             label: 'Transaction 1',
-            value: 100,
-            currency: 'EUR'
+            value: {
+                value: 100,
+                currency: 'EUR'
+            }
         }
     ]
 }

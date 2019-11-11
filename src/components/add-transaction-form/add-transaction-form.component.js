@@ -12,8 +12,10 @@ const AddTransactionForm = ({ exchangeRate, addTransaction }) => {
         event.preventDefault();
         addTransaction({
             label: transactionLabel,
-            value: Number(value),
-            currency: selectedCurrency
+            value: {
+                value: Number(value),
+                currency: selectedCurrency
+            }
         });
     };
 

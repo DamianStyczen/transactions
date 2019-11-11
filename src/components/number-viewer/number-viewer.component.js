@@ -5,6 +5,8 @@ import convertValue from '../../utils/converter';
 const NumberViewer = ({ number, convert, exchangeRate }) => {
     const { value, currency } = number;
 
+    console.log({ number, value });
+
     const convertedNumber = convert ? convertValue(number, exchangeRate) : null;
 
     return (

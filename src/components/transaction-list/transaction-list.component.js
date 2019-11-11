@@ -4,14 +4,18 @@ import Transaction from '../transaction';
 const TransactionList = ({ transactions, deleteTransaction }) => {
     const listItems = transactions && transactions.map(item => (
         <li key={item.id}>
-            <Transaction {...item} delete={() => deleteTransaction(item.id)}/>
+            <Transaction {...item} delete={() => deleteTransaction(item.id)} />
         </li>
     ))
+
+    if (listItems && listItems.length === 0) {
+        return <p>The list is empty</p>
+    }
     return (
-    <ul>
-        {listItems}
-    </ul>
-  );
+        <ul>
+            {listItems}
+        </ul>
+    );
 }
 
 export default TransactionList;

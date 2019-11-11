@@ -3,10 +3,7 @@ import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const initialState = {
-    exchangeRate: 4.12,
-    transactions: {}
-};
+const initialState = {};
 const middleware = [thunk];
 
 const store = createStore(

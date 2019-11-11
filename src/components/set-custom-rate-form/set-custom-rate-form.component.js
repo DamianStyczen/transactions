@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from '../button';
+import { Form, Button, Input } from './set-custom-rate-form.style';
 
 const SetCustomRateForm = ({ setCustomRate, closeModal }) => {
     const [value, setValue] = useState('');
@@ -11,12 +11,12 @@ const SetCustomRateForm = ({ setCustomRate, closeModal }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <label>
                 Custom rate
             <br />
                 1 EUR =
-                <input
+                <Input
                     type='number'
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
@@ -26,7 +26,7 @@ const SetCustomRateForm = ({ setCustomRate, closeModal }) => {
                 PLN
         </label>
             <Button type='submit'>Set a custom rate</Button>
-        </form>
+        </Form>
     );
 }
 

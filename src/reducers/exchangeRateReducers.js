@@ -12,7 +12,7 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 value: action.value,
-                isCustom: false
+                isCustom: true
             }
         case EXCHANGE_RATE_RESET:
             return {

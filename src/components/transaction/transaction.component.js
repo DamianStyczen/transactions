@@ -1,12 +1,11 @@
 import React from 'react';
+import NumberViewer from '../number-viewer';
 
 const Transaction = ({ id, value, label, currency }) => {
-  const sign = value < 0 ? '-' : '+';
-
-    return (
+  return (
     <div>
-        <h3>{ label }</h3>
-        <p>{ sign } { Math.abs(value) } { currency }</p>
+      <h3>{label}</h3>
+      <NumberViewer number={{ value, currency }} convert />
     </div>
   );
 }

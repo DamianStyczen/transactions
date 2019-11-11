@@ -1,46 +1,38 @@
 import React, { useRef } from 'react';
-import { ClickOutside } from './modal.style';
+import { ClickOutside, Wrapper } from './modal.style';
 import Section from '../section';
 import AddTransactionForm from '../add-transaction-form';
-
-const modals = {
-    setCustomRate: {
-        title: 'Set custom exchange rate',
-        component: <span>set custom exchange rate</span>
-    },
-    addTransaction: {
-        title: 'Add new transaction',
-        component: <AddTransactionForm />
-    }
-}
+import { config } from './modal.const';
 
 const Modal = ({ isShown, modalName, closeModal }) => {
-    const clickOutsideRef = useRef();
+  const clickOutsideRef = useRef();
 
-    if (!isShown) {
-        return null;
+  if (!isShown) {
+    return null;
+  }
+
+  const handleClickOutside = e => {
+    const targetMatchesRef = e.target === clickOutsideRef.current;
+
+    if (targetMatchesRef) {
+      closeModal();
     }
+  }
 
-    const handleClickOutside = e => {
-        const targetMatchesRef = e.target === clickOutsideRef.current;
+  const output = config[modalName];
 
-        if (targetMatchesRef) {
-            closeModal();
-        }
-    }
-
-    const output = modals[modalName];
-
-    return (
-        <ClickOutside
-            onClick={handleClickOutside}
-            ref={clickOutsideRef}
-        >
-            <Section title={output.title}>
-                {output.component}
-            </Section>
-        </ClickOutside>
-    );
+  return (
+    <ClickOutside
+      onClick={handleClickOutside}
+      ref={clickOutsideRef}
+    >
+      <Wrapper>
+        <Section title={output.title}>
+          {output.component}
+        </Section>
+      </Wrapper>
+    </ClickOutside>
+  );
 }
 
 export default Modal;

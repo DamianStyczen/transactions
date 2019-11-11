@@ -11,3 +11,7 @@ export const ClickOutside = styled.div`
     height: 100%;
     background-color: rgba(0, 0, 0, .8);
 `;
+
+export const Wrapper = styled.div`
+    max-width: 800px;
+`;

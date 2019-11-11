@@ -1,9 +1,17 @@
 import {
-    TRANSACTIONS_ADD
+    TRANSACTIONS_ADD,
+    TRANSACTIONS_DELETE
 } from '../actions/actionTypes';
 
 const initialState = {
-    list: []
+    list: [
+        {
+            id: 0,
+            label: 'Transaction 1',
+            value: 100,
+            currency: 'EUR'
+        }
+    ]
 }
 
 export default function (state = initialState, action) {
@@ -15,6 +23,13 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 list: newList
+            }
+        case TRANSACTIONS_DELETE:
+            const { id } = action;
+            const filteredList = state.list.filter(item => item.id !== id);
+            return {
+                ...state,
+                list: filteredList
             }
         default:
             return state;

@@ -1,12 +1,14 @@
 import React from 'react';
 import NumberViewer from '../number-viewer';
+import { Wrapper, Button, Header } from './transaction.style';
 
-const Transaction = ({ id, value, label, currency }) => {
+const Transaction = ({ value, label, currency, deleteTransaction }) => {
   return (
-    <div>
-      <h3>{label}</h3>
-      <NumberViewer number={{ value, currency }} convert />
-    </div>
+    <Wrapper>
+      <Header>{label}</Header>
+      <Button onClick={deleteTransaction} danger>Delete</Button>
+      <NumberViewer show={true} number={{ value, currency }} convert />
+    </Wrapper>
   );
 }
 

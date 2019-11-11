@@ -6,12 +6,11 @@ const BiggestTransaction = ({ transactions, exchangeRate, deleteTransaction }) =
     const rate = exchangeRate.value;
     const { list } = transactions;
     list.sort((a, b) => {
-        const convertedA = a.currency !== 'EUR' ? convert(a, rate) : a;
-        const convertedB = b.currency !== 'EUR' ? convert(b, rate) : b;
+        const convertedA = a.value.currency !== 'EUR' ? convert(a.value, rate) : a.value;
+        const convertedB = b.value.currency !== 'EUR' ? convert(b.value, rate) : b.value;
 
-        return convertedA - convertedB;
+        return convertedB.value - convertedA.value;
     })
-
     const transaction = list[0];
 
 

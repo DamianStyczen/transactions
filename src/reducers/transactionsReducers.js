@@ -4,16 +4,7 @@ import {
 } from '../actions/actionTypes';
 
 const initialState = {
-    list: [
-        {
-            id: 0,
-            label: 'Transaction 1',
-            value: {
-                value: 10000,
-                currency: 'EUR'
-            }
-        }
-    ]
+    list: []
 }
 
 export default function (state = initialState, action) {
